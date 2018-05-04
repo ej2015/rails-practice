@@ -1,0 +1,34 @@
+= simple_form_for @maid, wrapper: "horizontal_form" do |f|
+  - if @maid.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@maid.errors.count, "error")} prohibited this maid from being saved:"
+      %ul
+        - @maid.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.input :m_fname
+  .field
+    = f.input :m_lname
+  .field
+    = f.input :m_ms, collection: Maid.m_ms.keys
+  .field
+    = f.input :m_nationality, collection: Maid.m_nationalities.keys
+  .field
+    = f.input :m_dob, as: :string, input_html: { class: "date-input", value: @maid.m_dob.try(:strftime, "%d-%m-%Y") }
+  .field
+    = f.input :m_passport
+  .field
+    = f.input :m_emp_status, collection: Maid.m_emp_statuses.keys
+  .field
+    = f.input :m_wp_no
+  .field
+    = f.input :sb_transmission
+  .field
+    = f.input :cov_months, collection: Maid.cov_months.keys
+  .field
+    = f.input :performance_bond, collection: Maid.performance_bonds.keys
+  .field
+    = f.input :waiver_of_indemnity
+  .actions
+    = f.submit 'Save'

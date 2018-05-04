@@ -1,0 +1,41 @@
+= simple_form_for @portal, wrapper: :horizontal_form  do |f|
+  - if @portal.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@portal.errors.count, "error")} prohibited this portal from being saved:"
+      %ul
+        - @portal.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.input :agency_code, collection: Portal.agency_codes.keys
+  .field
+    = f.input :policy, collection: Portal.policies.keys
+  .field
+    = f.input :product_type, collection: Portal.product_types.keys
+  .field
+    = f.input :cp, collection: Portal.cps.keys
+  .field
+    = f.input :base_premium, as: :decimal
+  .field
+    = f.input :discount, as: :decimal
+  .field
+    = f.input :premium, as: :decimal
+  .field
+    = f.input :email, as: :email
+  .field
+    = f.input :first_name
+  .field
+    = f.input :last_name
+  .field
+    = f.input :dob, as: :string, input_html: { class: "date-input", value: @portal.dob.try(:strftime, "%d-%m-%Y") }
+  .field
+    = f.input :start_date,  as: :string, input_html: { class: "date-input", value: @portal.start_date.try(:strftime, "%d-%m-%Y")  }
+  .field
+    = f.input :end_date,  as: :string, input_html: { class: "date-input", value: @portal.end_date.try(:strftime, "%d-%m-%Y")  }
+  .field
+    = f.input :load_type, collection: ["Property", "Maid"]
+  .field
+    = f.input :load_id
+  .actions
+    = f.submit 'Save'
+
+

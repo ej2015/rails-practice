@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b M fname:
+  = @maid.m_fname
+%p
+  %b M lname:
+  = @maid.m_lname
+%p
+  %b M ms:
+  = @maid.m_ms
+%p
+  %b M nationality:
+  = @maid.m_nationality
+%p
+  %b M dob:
+  = @maid.m_dob
+%p
+  %b M passport:
+  = @maid.m_passport
+%p
+  %b M emp status:
+  = @maid.m_emp_status
+%p
+  %b M wp no:
+  = @maid.m_wp_no
+%p
+  %b Sb transmission:
+  = @maid.sb_transmission
+%p
+  %b Cov months:
+  = @maid.cov_months
+
+= link_to 'Edit', edit_maid_path(@maid)
+\|
+= link_to 'Back', maids_path

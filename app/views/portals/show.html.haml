@@ -1,0 +1,45 @@
+%p#notice= notice
+
+%p
+  %b Agency code:
+  = @portal.agency_code
+%p
+  %b Policy:
+  = @portal.policy
+%p
+  %b Type:
+  = @portal.product_type
+%p
+  %b Cp:
+  = @portal.cp
+%p
+  %b Base premium:
+  = @portal.base_premium
+%p
+  %b Discount:
+  = @portal.discount
+%p
+  %b Premium:
+  = @portal.premium
+%p
+  %b Email:
+  = @portal.email
+%p
+  %b First name:
+  = @portal.first_name
+%p
+  %b Last name:
+  = @portal.last_name
+%p
+  %b Dob:
+  = @portal.dob
+%p
+  %b Start date:
+  = @portal.start_date
+%p
+  %b End date:
+  = @portal.end_date
+
+= link_to 'Edit', edit_portal_path(@portal)
+\|
+= link_to 'Back', portals_path

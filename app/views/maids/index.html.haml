@@ -1,0 +1,39 @@
+%h1 Listing maids
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th M fname
+      %th M lname
+      %th M ms
+      %th M nationality
+      %th M dob
+      %th M passport
+      %th M emp status
+      %th M wp no
+      %th Sb transmission
+      %th Cov months
+      %th
+      %th
+      %th
+
+  %tbody
+    - @maids.each do |maid|
+      %tr
+        %td= maid.m_fname
+        %td= maid.m_lname
+        %td= maid.m_ms
+        %td= maid.m_nationality
+        %td= maid.m_dob
+        %td= maid.m_passport
+        %td= maid.m_emp_status
+        %td= maid.m_wp_no
+        %td= maid.sb_transmission
+        %td= maid.cov_months
+        %td= link_to 'Show', maid
+        %td= link_to 'Edit', edit_maid_path(maid)
+        %td= link_to 'Destroy', maid, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Maid', new_maid_path

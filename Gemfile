@@ -21,6 +21,9 @@ gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem "jquery-rails"
+gem 'jquery-ui-rails'
+gem 'httparty'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -33,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'simple_form'
+gem 'simple_form', '~> 4.0.0'
 gem 'haml-rails', '~> 1.0'
 
 # Use Capistrano for deployment

@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Mortgagee:
+  = @property.mortgagee
+%p
+  %b Hc:
+  = @property.hc
+%p
+  %b Building:
+  = @property.building
+%p
+  %b Renovation:
+  = @property.renovation
+%p
+  %b H type:
+  = @property.h_type
+%p
+  %b R type:
+  = @property.r_type
+%p
+  %b Staying:
+  = @property.staying
+%p
+  %b P type:
+  = @property.p_type
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path

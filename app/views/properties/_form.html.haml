@@ -1,0 +1,26 @@
+= simple_form_for @property do |f|
+  - if @property.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@property.errors.count, "error")} prohibited this property from being saved:"
+      %ul
+        - @property.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.input :mortgagee
+  .field
+    = f.input :hc
+  .field
+    = f.input :building
+  .field
+    = f.input :renovation
+  .field
+    = f.input :h_type, collection: Property.h_types.keys
+  .field
+    = f.input :r_type, collection: Property.r_types.keys
+  .field
+    = f.input :staying
+  .field
+    = f.input :p_type, collection: Property.p_types.keys
+  .actions
+    = f.submit 'Save'

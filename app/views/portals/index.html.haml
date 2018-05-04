@@ -1,0 +1,47 @@
+%h1 Listing portals
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th Agency code
+      %th Policy
+      %th Type
+      %th Cp
+      %th Base premium
+      %th Discount
+      %th Premium
+      %th Email
+      %th First name
+      %th Last name
+      %th Dob
+      %th Start date
+      %th End date
+      %th Purchase
+      %th
+      %th
+      %th
+
+  %tbody
+    - @portals.each do |portal|
+      %tr
+        %td= portal.agency_code
+        %td= portal.policy
+        %td= portal.product_type
+        %td= portal.cp
+        %td= portal.base_premium
+        %td= portal.discount
+        %td= portal.premium
+        %td= portal.email
+        %td= portal.first_name
+        %td= portal.last_name
+        %td= portal.dob
+        %td= portal.start_date
+        %td= portal.end_date
+        %td= link_to "Go", purchase_portal_path(portal)
+        %td= link_to 'Show', portal
+        %td= link_to 'Edit', edit_portal_path(portal)
+        %td= link_to 'Destroy', portal, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Portal', new_portal_path
