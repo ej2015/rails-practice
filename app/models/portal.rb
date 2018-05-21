@@ -1,9 +1,9 @@
 class Portal < ApplicationRecord
 	belongs_to :load, polymorphic: true
   enum agency_code: { gobear: 1001 }
-  enum policy: { ecics_delux: 123  }
+  enum policy: { ecics_delux: 123, qbe_home_plus_standard: 233  }
 	enum product_type: { maid_insurance: 0, property_insurance: 1, motor_insurance: 2, travel_insurance: 3 }
-	enum cp: { ecics: 26, msig: 29, liberty_insurance: 8 }
+	enum cp: { ecics: 26, msig: 29, liberty_insurance: 8, qbe: 11 }
 	
 	def get_portal_payload
 		{

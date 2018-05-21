@@ -67,14 +67,14 @@ class PortalsController < ApplicationController
 	def purchase
 		p = @portal.get_portal_payload
 		l = @portal.get_load_payload
-		payload = p.merge l
+		payload = p.merge(l).merge({ic: "S8183386e", ic_type: 0, mobile: "81833864", address: "9 Jurong Avenue, Singapore 630744", postal: "640744", occupation: "4", nationality: "13" })
     host = "http://127.0.0.1:3000/"
 		path = "/orders"
 		url = URI.join(host, path).to_s
 		headers = {
-			apikey: "12345",
 			'Content-Type' => 'application/json',
-			"Accept" => "application/json"
+			"Accept" => "application/json",
+			"apikey" =>   "9959435a40bf74e6c1505da26a7a1f4d"
 		}
 	  response = self.class.post(url, body: payload.to_json, headers: headers)
 		if response["success"]

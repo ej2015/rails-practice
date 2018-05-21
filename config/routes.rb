@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+	post '/auth', to: 'authers#auth'
+
   resources :properties
   resources :maids
   resources :portals do
